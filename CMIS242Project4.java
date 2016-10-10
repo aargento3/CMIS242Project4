@@ -260,11 +260,10 @@ public class CMIS242Project4 extends JFrame {
         
             while (iterator.hasNext() && count < database.size()){
                 
-                Map.Entry<Integer, Student> studentInfo = iterator.next();
-                System.out.println(studentInfo.getValue());
-
-                out.write(studentInfo.getValue() + "\n\n");
-                count ++;
+                Map.Entry<Integer, Student> studentInfo = iterator.next();                
+                int key = studentInfo.getKey();
+                out.write("Student ID: " + key + "\n" + studentInfo.getValue() + "\n\n");                
+                count ++;;
             } 
             out.close();
         }catch (IOException ex) {
